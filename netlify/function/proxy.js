@@ -3,7 +3,7 @@
 const fetch = require('node-fetch');
 
 exports.handler = async function(event, context) {
-  const { url } = event.queryStringParameters;
+  const { url } = event.queryStringParameters.url;
 
   if (!url) {
     return {
@@ -13,7 +13,8 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const response = await fetch(url);
+    const decodedUrl = decodeURIComponent(url);
+    const response = await fetch(decodedUrl);
     const body = await response.text();
 
     return {
