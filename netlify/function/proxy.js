@@ -16,7 +16,7 @@ exports.handler = async function(event, context) {
     const decodedUrl = decodeURIComponent(url);
     const response = await fetch(decodedUrl);
     const body = await response.text();
-
+    console.log(decodedUrl)
     return {
       statusCode: 200,
       headers: {
