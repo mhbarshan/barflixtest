@@ -2,11 +2,11 @@ import React from 'react'
 import HlsPlayer from 'react-hls-player';
 
 const Player = ({url})=> {
-  const proxyUrl = `/proxy?url=${encodeURIComponent(url)}`;
+  // const proxyUrl = `/proxy?url=${encodeURIComponent(url)}`;
   return (
     <div>
        <HlsPlayer
-      src={proxyUrl}
+      src={url}
       autoPlay={true}
       controls={true}
       width="75%"
