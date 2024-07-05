@@ -5,8 +5,8 @@ import "react-multi-carousel/lib/styles.css";
 
 
 const ChannelList = ({ onPlay }) => {
-  const host = "http://localhost:5000";
-  const urlInitial = [];
+  // const host = "http://localhost:5000";
+  // const urlInitial = [];
   const [channel, setChannel] = useState([]);
   useEffect(()=>{
     fetch("https://barflixbe.onrender.com/getChannel",{
@@ -16,7 +16,7 @@ const ChannelList = ({ onPlay }) => {
     .then((data)=>{
        console.log(data,"channels")
       setChannel(data)
-      console.log(channel)
+      // console.log(channel)
     })
   },[])
 
