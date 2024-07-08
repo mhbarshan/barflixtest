@@ -41,7 +41,16 @@ const ChannelList = ({ onPlay }) => {
   };
   return (
     <div className="">
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive} showDots={true} customTransition="all .5"
+  transitionDuration={500}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+  keyBoardControl={true}
+  ssr={true} 
+  infinite={true}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px">
+
         {channel.map((c) => (
           <div key={c.id}>
           <button className="btn btn-outline-secondary" onClick={()=>onPlay(c.url)}><img style={{height:"140px", width:"318px"}} src={c.iUrl} alt="" />
